@@ -4,14 +4,14 @@ import Avatar from 'react-avatar';
 
 import styles from './styles.module.scss';
 
-interface PlayerType {
+interface PlayerComponent {
   name: string;
   lastname: string;
   wins: number;
   className?: string;
 }
 
-function Player({ name, lastname, wins, className }: PlayerType) {
+function Player({ name, lastname, wins, className }: PlayerComponent) {
   return (
     <div className={`row ${styles.container} ${className}`}>
       <div className={`column middle ${styles.avatar}`}>

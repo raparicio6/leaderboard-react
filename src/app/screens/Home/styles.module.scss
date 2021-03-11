@@ -3,3 +3,9 @@
 .container {
   padding-top: 50px;
 }
+
+.list {
+  flex-wrap: wrap;
+  max-width: 935px;
+  width: 100%;
+}
