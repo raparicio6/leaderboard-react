@@ -1,33 +1,7 @@
-@import 'colors';
-@import 'variables';
-
 .all-screen-height {
   min-height: 100vh;
 }
 
 .full-width {
   width: 100%;
-}
-
-.title {
-  align-self: center;
-  color: $royal-blue;
-  font-family: Texta-Medium;
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 35px;
-  text-align: center;
-}
-
-@media (max-width: $breakpoint-tablet) {
-  .title {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .title {
-    font-size: 30px;
-    max-width: 300px;
-  }
 }

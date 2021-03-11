@@ -1,0 +1,32 @@
+@import '../../../scss/colors';
+
+.container {
+  height: 130px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.avatar {
+  background-color: $emperor;
+  border-radius: 5% 0 0 5%;
+  padding: 0 15px;
+}
+
+.info {
+  color: $white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.data {
+  background-color: $black;
+  border-radius: 0 5% 5% 0;
+  width: 160px;
+}
+
+.subtitle {
+  color: $very-light-grey;
+  font-size: 20px;
+}

@@ -3,6 +3,7 @@ $black: #000;
 $catskill-white: #e2e8f0;
 $concrete: #f2f2f2;
 $eastern-blue: #25a8bb;
+$emperor: #515151;
 $gray: #808080;
 $governor-bay: #423dce;
 $port-gore: #1f1d54;
@@ -13,3 +14,11 @@ $very-light-grey: #ccc;
 $wild-sand: #f4f4f4;
 $white: #fff;
 $white-lilac: #fcfcfe;
+
+.background-black {
+  background-color: $black;
+}
+
+.background-wild-sand {
+  background-color: $wild-sand;
+}
