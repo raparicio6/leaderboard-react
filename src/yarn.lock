@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+wolox-equalizer@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/wolox-equalizer/-/wolox-equalizer-0.0.3.tgz#cb0979a9b4a2dc813ee6ef738c1074ea0b98db3f"
+  integrity sha512-C4cUagcPRZM/4wWYOnkdPoaMwofwXdHxJCtxbvainA4GYGaKY0FZOqQB6JtdgvfkenMGuRsVXRbc6QhYBrUnfA==
