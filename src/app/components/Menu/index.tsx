@@ -1,9 +1,26 @@
-import React from 'react';
-import { string } from 'prop-types';
+import React, { useCallback, useState } from 'react';
+import { string, func } from 'prop-types';
 
 import styles from './styles.module.scss';
 
-function Menu({ firstPlayerName, secondPlayerName, thirdPlayerName }) {
+function Menu({
+  firstPlayerName,
+  secondPlayerName,
+  thirdPlayerName,
+  createPlayer,
+}) {
+  const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [wins, setWins] = useState(0);
+
+  const handleOnSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      createPlayer({ name, lastname, wins });
+    },
+    [createPlayer, name, lastname, wins]
+  );
+
   return (
     <div className={`column ${styles.container}`}>
       <div className={styles.menu}>
@@ -37,16 +54,44 @@ function Menu({ firstPlayerName, secondPlayerName, thirdPlayerName }) {
           )}
         </div>
       </div>
-      <div className={`row center middle ${styles.btncontainer}`}>
-        <button type="button" className={styles.button}>
-          aaaaaaa
-        </button>
-      </div>
+
+      <form onSubmit={handleOnSubmit}>
+        <div className={`column ${styles.btncontainer}`}>
+          <h2
+            className={`${styles.info} ${styles.big} background-black row center`}
+          >
+            Create a new player
+          </h2>
+          <input
+            className={`${styles.input} ${styles.placeholder} m-top-5`}
+            placeholder="Name"
+            type="text"
+            onChange={(event) => setName(event.target.value)}
+          />
+          <input
+            className={`${styles.input} ${styles.placeholder} m-top-3`}
+            placeholder="Lastname"
+            type="text"
+            onChange={(event) => setLastname(event.target.value)}
+          />
+          <input
+            className={`${styles.input} ${styles.placeholder} m-top-3`}
+            placeholder="Wins"
+            type="text"
+            onChange={(event) => setWins(parseInt(event.target.value, 10))}
+          />
+
+          <button type="submit" className={`${styles.button} m-top-7`}>
+            Create
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
 
 Menu.propTypes = {
+  createPlayer: func.isRequired,
   firstPlayerName: string,
   secondPlayerName: string,
   thirdPlayerName: string,

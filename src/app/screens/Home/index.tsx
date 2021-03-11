@@ -13,7 +13,7 @@ const api = create(baseURL);
 function Home() {
   const [players, setPlayers] = useState([]);
 
-  const fetchUsers = useCallback(
+  const fetchPlayers = useCallback(
     () =>
       api
         .getPlayers()
@@ -24,9 +24,17 @@ function Home() {
     [setPlayers]
   );
 
+  const createPlayer = useCallback(
+    (player) =>
+      api
+        .createPlayer(player)
+        .then((response: ApiResponse<any>) => response.ok && fetchPlayers()),
+    [fetchPlayers]
+  );
+
   useEffect(() => {
-    fetchUsers();
-  }, [fetchUsers]);
+    fetchPlayers();
+  }, [fetchPlayers]);
 
   return (
     <div
@@ -54,6 +62,7 @@ function Home() {
           thirdPlayerName={
             players[2] && `${players[2].name} ${players[2].lastname}`
           }
+          createPlayer={createPlayer}
         />
       </div>
     </div>

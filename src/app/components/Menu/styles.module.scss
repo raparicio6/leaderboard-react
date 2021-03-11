@@ -49,5 +49,39 @@ $padding-left-and-right: 20px;
 
 .data {
   background-color: $black;
-  padding: 30px $padding-left-and-right 25px;
+  padding: 30px $padding-left-and-right 50px;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+.input {
+  background-color: $gray;
+  border-radius: 5%;
+  color: $white;
+  font-family: Texta-Medium;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 0 10px 25px;
+
+  /* stylelint-disable */
+  @include placeholder {
+    color: $white;
+    font-family: Texta-Medium;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  /* stylelint-enable */
 }

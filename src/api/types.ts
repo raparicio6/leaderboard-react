@@ -1,8 +1,11 @@
 export interface Player {
-  id: string;
   name: string;
   lastname: string;
-  wins: number;
+  wins?: number;
+}
+
+export interface StoredPlayer extends Player {
+  id: string;
 }
 
 export interface Players {
