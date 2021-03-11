@@ -3,6 +3,7 @@ import { ApiResponse } from 'apisauce';
 
 import Player from '../../components/Player';
 import { create } from '../../../api';
+import Menu from '../../components/Menu';
 
 import styles from './styles.module.scss';
 
@@ -42,14 +43,19 @@ function Home() {
           />
         ))}
       </div>
-      {/* <div className="column center">
-        <Turns
-          current={currentTurn}
-          left={turnsLeft}
-          past={turnsPast}
-          handleEndTurnOnClick={handleEndTurnOnClick}
+      <div className="column center">
+        <Menu
+          firstPlayerName={
+            players[0] && `${players[0].name} ${players[0].lastname}`
+          }
+          secondPlayerName={
+            players[1] && `${players[1].name} ${players[1].lastname}`
+          }
+          thirdPlayerName={
+            players[2] && `${players[2].name} ${players[2].lastname}`
+          }
         />
-      </div> */}
+      </div>
     </div>
   );
 }

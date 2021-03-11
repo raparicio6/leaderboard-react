@@ -1,0 +1,53 @@
+@import '../../../scss/colors';
+
+$padding-left-and-right: 20px;
+
+.bordered {
+  border: 1px solid $emperor;
+  padding: 45px 0;
+}
+
+.container {
+  width: 270px;
+}
+
+.button {
+  background-color: $eastern-blue;
+  border-radius: 5%;
+  color: $white;
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.btncontainer {
+  background-color: $black;
+  border-radius: 0 0 5% 5%;
+  padding: 0 $padding-left-and-right 20px;
+}
+
+.info {
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+
+  &.big {
+    font-size: 20px;
+  }
+
+  &.verybig {
+    font-size: 30px;
+  }
+}
+
+.menu {
+  background-color: $emperor;
+  border-radius: 5% 5% 0 0;
+  padding: 15px 0;
+}
+
+.data {
+  background-color: $black;
+  padding: 30px $padding-left-and-right 25px;
+}
