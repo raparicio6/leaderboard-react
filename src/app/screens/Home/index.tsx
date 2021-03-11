@@ -32,6 +32,14 @@ function Home() {
     [fetchPlayers]
   );
 
+  const updateWins = useCallback(
+    (player) =>
+      api
+        .updatePlayer(player)
+        .then((response: ApiResponse<any>) => response.ok && fetchPlayers()),
+    [fetchPlayers]
+  );
+
   useEffect(() => {
     fetchPlayers();
   }, [fetchPlayers]);
@@ -48,6 +56,8 @@ function Home() {
             wins={wins}
             className="m-top-5"
             key={id}
+            id={id}
+            updateWins={updateWins}
           />
         ))}
       </div>

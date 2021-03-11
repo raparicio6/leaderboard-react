@@ -17,6 +17,9 @@ function Menu({
     (event) => {
       event.preventDefault();
       createPlayer({ name, lastname, wins });
+      setName('');
+      setLastname('');
+      setWins(0);
     },
     [createPlayer, name, lastname, wins]
   );
@@ -26,7 +29,7 @@ function Menu({
       <div className={styles.menu}>
         <span className={`row center ${styles.info} ${styles.big}`}>Menu</span>
       </div>
-      <div className={styles.data}>
+      <div className={styles.scoreboard}>
         <div className={`column center ${styles.bordered}`}>
           {firstPlayerName && (
             <>

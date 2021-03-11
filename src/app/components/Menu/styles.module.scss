@@ -47,7 +47,7 @@ $padding-left-and-right: 20px;
   padding: 15px 0;
 }
 
-.data {
+.scoreboard {
   background-color: $black;
   padding: 30px $padding-left-and-right 50px;
 }
@@ -71,17 +71,13 @@ $padding-left-and-right: 20px;
   background-color: $gray;
   border-radius: 5%;
   color: $white;
-  font-family: Texta-Medium;
   font-size: 20px;
   font-weight: 600;
   padding: 10px 0 10px 25px;
 
-  /* stylelint-disable */
   @include placeholder {
     color: $white;
-    font-family: Texta-Medium;
     font-size: 16px;
     font-weight: 600;
   }
-  /* stylelint-enable */
 }

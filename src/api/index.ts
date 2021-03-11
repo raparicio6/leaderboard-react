@@ -1,6 +1,6 @@
 import apisauce from 'apisauce';
 
-import { Player } from './types';
+import { Player, StoredPlayer } from './types';
 
 export const create = (baseURL = '') => {
   const api = apisauce.create({
@@ -12,9 +12,13 @@ export const create = (baseURL = '') => {
 
   const createPlayer = (player: Player) => api.post('/players', { player });
 
+  const updatePlayer = (player: StoredPlayer) =>
+    api.put('/players', { player });
+
   return {
     getPlayers,
     createPlayer,
+    updatePlayer,
   };
 };
 
